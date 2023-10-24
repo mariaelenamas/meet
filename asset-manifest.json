@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/mariaelenamas/meet.git/static/css/main.073c9b0a.css",
+    "main.js": "/mariaelenamas/meet.git/static/js/main.6f7ce466.js",
+    "static/js/512.0947b659.chunk.js": "/mariaelenamas/meet.git/static/js/512.0947b659.chunk.js",
+    "service-worker.js": "/mariaelenamas/meet.git/service-worker.js",
+    "static/media/logo.svg": "/mariaelenamas/meet.git/static/media/logo.2d27ead7c10f774c5306bcf3c257a728.svg",
+    "index.html": "/mariaelenamas/meet.git/index.html",
+    "main.073c9b0a.css.map": "/mariaelenamas/meet.git/static/css/main.073c9b0a.css.map",
+    "main.6f7ce466.js.map": "/mariaelenamas/meet.git/static/js/main.6f7ce466.js.map",
+    "512.0947b659.chunk.js.map": "/mariaelenamas/meet.git/static/js/512.0947b659.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.6f7ce466.js"
+  ]
+}
