@@ -53,3 +53,18 @@ that I know what events are organized in which city.
 Given the user who is viewing the event details section; <br>
 When the user selects the "View Chart" button; <br>
 Then the user will see a visual representation of the upcoming events by city.
+
+*Why serverless functions for the Meet App*
+
+In this project, serverless functions are mainly used for the followiing reasons: <br>
+- use only of the resources you need (less charging costs) <br> 
+- no setup costs for development, staging, or production environments <br>
+- default auto-scaling <br>
+- easy and fast deployment <br>
+- security: authentication server with Google OAuth to access to the Google Calendar API
+
+*Serverless infratructure*
+
+- Frontend: JavaScript/React; hosted on GitHub Pages. <br>
+- Backend (Server Logic): written with Node/Express as Lambda functions (FaaS); hosted on AWS (requests come from frontend to Lambda function to data). <br>
+- Backend (Database): Google Calendar API.
