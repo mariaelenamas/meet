@@ -68,3 +68,7 @@ In this project, serverless functions are mainly used for the followiing reasons
 - Frontend: JavaScript/React; hosted on GitHub Pages. <br>
 - Backend (Server Logic): written with Node/Express as Lambda functions (FaaS); hosted on AWS (requests come from frontend to Lambda function to data). <br>
 - Backend (Database): Google Calendar API.
+
+*Serverless Diagram*
+
+![Serverless Diagram](/serverlessdiagram.png)
