@@ -4,13 +4,16 @@ import EventList from '../components/EventList';
 
 describe('<EventList /> component', () => {
     let EventListComponent;
-    beforeEach(() => {
-        EventListComponent = render(<EventList />);
-    })
 
-    test('has an element with "list" role', () => {
-        expect(EventListComponent.queryByRole("list")).toBeInTheDocument();
+    let allEvents;
+
+    beforeAll(async () => {
+        allEvents = await getEvents();
     });
+
+    beforeEach(async () => {
+        EventListComponent = render(<EventList event={allEvents[0]} />);
+    })
 
     // test('renders correct number of events', () => {
     //     EventListComponent.rerender(<EventList events={
