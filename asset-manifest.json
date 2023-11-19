@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/mariaelenamas/meet.git/static/css/main.073c9b0a.css",
-    "main.js": "/mariaelenamas/meet.git/static/js/main.f136e7aa.js",
+    "main.js": "/mariaelenamas/meet.git/static/js/main.0e786f02.js",
     "static/js/787.4b564826.chunk.js": "/mariaelenamas/meet.git/static/js/787.4b564826.chunk.js",
     "service-worker.js": "/mariaelenamas/meet.git/service-worker.js",
     "index.html": "/mariaelenamas/meet.git/index.html",
     "main.073c9b0a.css.map": "/mariaelenamas/meet.git/static/css/main.073c9b0a.css.map",
-    "main.f136e7aa.js.map": "/mariaelenamas/meet.git/static/js/main.f136e7aa.js.map",
+    "main.0e786f02.js.map": "/mariaelenamas/meet.git/static/js/main.0e786f02.js.map",
     "787.4b564826.chunk.js.map": "/mariaelenamas/meet.git/static/js/787.4b564826.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.f136e7aa.js"
+    "static/js/main.0e786f02.js"
   ]
 }
