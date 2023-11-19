@@ -9,12 +9,10 @@ const NumberOfEvents = ({ eventsNumber }) => {
             <input
                 type="text"
                 defaultValue="32"
-
                 data-testid="events-count"
             />
         </div>
     );
-    ;
 }
 
 export default NumberOfEvents;

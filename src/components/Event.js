@@ -16,6 +16,13 @@ const Event = ({ event }) => {
             >
                 {showDetails ? 'Hide Details' : 'Show Details'}
             </button>
+            {showDetails ? (
+                <div className="details">
+                    <h4>Event Details</h4>
+                    <p>Description: {event.description}</p>
+                    <p>Event status: {event.status}</p>
+                </div>
+            ) : null}
         </li>
     );
 }
