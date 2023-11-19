@@ -1,0 +1,28 @@
+.details-btn {
+    border: 2px solid #6c757d;
+    color: #6c757d;
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 0.25rem 0.5rem;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.details-btn:hover {
+    background-color: #495057;
+    color: #fff;
+    border-color: #343a40;
+}
+
+.event {
+    border: 2px solid #495057;
+    background-color: #e9ecef;
+    border-radius: 0.25rem;
+    margin: 1rem;
+    list-style-type: none;
+    list-style: none;
+}
