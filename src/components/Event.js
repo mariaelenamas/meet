@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import './Event.css';
+import { useState } from "react";
+import "./Event.css";
 
 const Event = ({ event }) => {
     const [showDetails, setShowDetails] = useState(false);
@@ -9,12 +9,12 @@ const Event = ({ event }) => {
             <p>{event.start.dateTime}</p>
             <p>{event.location}</p>
 
-            <button className='details-btn'
+            <button className="details-btn"
                 onClick={() => {
                     setShowDetails(!showDetails);
                 }}
             >
-                {showDetails ? 'Hide Details' : 'Show Details'}
+                {showDetails ? "Hide Details" : "Show Details"}
             </button>
             {showDetails ? (
                 <div className="details">

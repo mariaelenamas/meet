@@ -1,4 +1,4 @@
-import mockData from './mock-data';
+import mockData from "./mock-data";
 
 /**
  *
@@ -30,7 +30,7 @@ const checkToken = async (accessToken) => {
 const getToken = async (code) => {
     const encodeCode = encodeURIComponent(code);
     const response = await fetch(
-        'https://z5hhvwbflc.execute-api.eu-central-1.amazonaws.com/dev/api/token' + '/' + encodeCode
+        "https://z5hhvwbflc.execute-api.eu-central-1.amazonaws.com/dev/api/token" + "/" + encodeCode
     );
     const { access_token } = await response.json();
     access_token && localStorage.setItem("access_token", access_token);
@@ -54,7 +54,7 @@ const removeQuery = () => {
 };
 
 export const getEvents = async () => {
-    if (window.location.href.startsWith('http://localhost')) {
+    if (window.location.href.startsWith("http://localhost")) {
         return mockData;
     }
 
@@ -72,7 +72,7 @@ export const getEvents = async () => {
 };
 
 export const getAccessToken = async () => {
-    const accessToken = localStorage.getItem('access_token');
+    const accessToken = localStorage.getItem("access_token");
     const tokenCheck = accessToken && (await checkToken(accessToken));
 
     if (!accessToken || tokenCheck.error) {

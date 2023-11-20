@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './NumberOfEvents.css';
+import "./NumberOfEvents.css";
 
 const NumberOfEvents = ({ eventsNumber }) => {
     const [number, setNumber] = useState(eventsNumber ? eventsNumber : 32)
