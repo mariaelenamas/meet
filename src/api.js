@@ -1,4 +1,5 @@
 import mockData from "./mock-data";
+import NProgress from "nprogress";
 
 /**
  *
@@ -54,7 +55,10 @@ const removeQuery = () => {
 };
 
 export const getEvents = async () => {
+    NProgress.start();
+
     if (window.location.href.startsWith("http://localhost")) {
+        NProgress.done();
         return mockData;
     }
 
