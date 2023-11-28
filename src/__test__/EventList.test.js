@@ -6,7 +6,7 @@ import App from "../App";
 describe("<EventList /> component", () => {
     let EventListComponent;
 
-    beforeAll(() => {
+    beforeEach(() => {
         EventListComponent = render(<EventList />);
     });
 
