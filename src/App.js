@@ -8,7 +8,7 @@ import "./App.css";
 
 const App = () => {
   const [events, setEvents] = useState([]);
-  const [locations, SetLocations] = useState([]);
+  //const [locations, SetLocations] = useState([]);
   const [allLocations, setAllLocations] = useState([]);
   const [currentNOE, setCurrentNOE] = useState(39);
   const [currentCity, setCurrentCity] = useState("See all cities");
@@ -41,7 +41,7 @@ const App = () => {
         {warningAlert.length ? <WarningAlert text={warningAlert} /> : null}
         <div>
           <CitySearch
-            allLocations={locations}
+            allLocations={allLocations}
             setCurrentCity={setCurrentCity}
             setInfoAlert={setInfoAlert} />
         </div>
