@@ -6,22 +6,13 @@ import App from "../App";
 describe("<EventList /> component", () => {
     let EventListComponent;
 
-    let allEvents;
-
-    beforeAll(async () => {
-        allEvents = await getEvents();
+    beforeAll(() => {
+        EventListComponent = render(<EventList />);
     });
 
-    beforeEach(async () => {
-        EventListComponent = render(<EventList event={allEvents[0]} />);
-    })
-
-    // test("renders correct number of events", () => {
-    //     EventListComponent.rerender(<EventList events={
-    //         [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }]
-    //     } />);
-    //     expect(EventListComponent.getAllByRole("listitem")).toHaveLength(4);
-    // });
+    test("has an element with 'list' role", () => {
+        expect(EventListComponent.queryByRole("list")).toBeInTheDocument();
+    });
 
     test("renders correct number of events", async () => {
         const allEvents = await getEvents();
@@ -31,7 +22,7 @@ describe("<EventList /> component", () => {
 });
 
 describe("<EventList /> integration", () => {
-    test("renders a list of 32 events when the app is mounted and rendered", async () => {
+    test("renders a list of 39 events when the app is mounted and rendered", async () => {
         const AppComponent = render(<App />);
         const AppDOM = AppComponent.container.firstChild;
         const EventListDOM = AppDOM.querySelector("#event-list");

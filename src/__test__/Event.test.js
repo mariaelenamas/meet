@@ -7,9 +7,10 @@ import { getEvents, extractLocations } from "../api";
 let mockEvent = mockData[0]
 describe("<Event /> component", () => {
     let EventComponent
-
-    beforeEach(() => {
-        EventComponent = render(<Event event={mockEvent} />); //why do we need event={mockeEvent}?
+    let allEvents;
+    beforeEach(async () => {
+        allEvents = await getEvents();
+        EventComponent = render(<Event event={mockEvent} />);
     })
 
     test("renders event title with 'title' role", () => {
@@ -24,7 +25,6 @@ describe("<Event /> component", () => {
         expect(EventComponent.queryByText(mockEvent.location)).toBeInTheDocument();
     });
 
-
     test("by default, event's details section is hidden", () => {
         const eventDOM = EventComponent.container.firstChild;
         const details = eventDOM.querySelector(".details");
@@ -35,6 +35,7 @@ describe("<Event /> component", () => {
         const user = userEvent.setup();
         const button = EventComponent.queryByText("Show Details");
         await user.click(button);
+
         const eventDom = EventComponent.container.firstChild;
         const details = eventDom.querySelector(".details");
         expect(details).toBeInTheDocument();
