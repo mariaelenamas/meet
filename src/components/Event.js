@@ -28,4 +28,3 @@ const Event = ({ event }) => {
 }
 
 export default Event;
-

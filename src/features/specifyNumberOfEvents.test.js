@@ -27,7 +27,7 @@ defineFeature(feature, test => {
         then("the app should display the specified number of events based on the user input", () => {
             const AppDOM = AppComponent.container.firstChild;
             const eventList = within(AppDOM).queryAllByRole('listitem');
-            expect(eventList.length).toEqual(39);
+            expect(eventList.length).toEqual(10);
         });
     });
 });

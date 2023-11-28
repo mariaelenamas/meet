@@ -84,7 +84,7 @@ defineFeature(feature, test => {
 
         and("the user should receive a list of upcoming events in that city", async () => {
             const EventListDOM = AppDOM.querySelector('#event-list');
-            const EventListItems = within(EventListDOM).queryAllByRole('listitem');
+            const EventListItems = within(EventListDOM).queryAllByRole("listitem");
             const allEvents = await getEvents();
 
             // filtering the list of all events down to events located in Germany

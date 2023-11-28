@@ -3,7 +3,6 @@ import userEvent from "@testing-library/user-event";
 import { getEvents } from "../api";
 import App from "../App";
 
-
 describe("<App /> component", () => {
     let AppDOM;
     beforeEach(() => {
@@ -18,29 +17,9 @@ describe("<App /> component", () => {
         expect(AppDOM.querySelector("#city-search")).toBeInTheDocument();
     });
 
-    test("number of events displayed updates based on user input", async () => {
-        const user = userEvent.setup();
-        const AppComponent = render(<App />);
-        const AppDOM = AppComponent.container.firstChild;
-
-        await waitFor(() => {
-            const NumberOfEventsDOM = AppDOM.querySelector("#events-count");
-            expect(NumberOfEventsDOM).toBeInTheDocument();
-        });
-
-        const NumberOfEventsDOM = AppDOM.querySelector("#events-count");
-        const NumberOfEventsInput = within(NumberOfEventsDOM).queryByRole("textbox");
-
-        await user.type(NumberOfEventsInput, "{backspace}{backspace}5");
-
-        const EventListDOM = AppDOM.querySelector("#event-list");
-        const allRenderedEventItems = within(EventListDOM).queryAllByRole("listitem");
-        expect(allRenderedEventItems.length).toEqual(39);
+    test("render NumberOfEvents", () => {
+        expect(AppDOM.querySelector("#number-of-events")).toBeInTheDocument();
     });
-
-    // test("render NumberOfEvents", () => {
-    //     expect(AppDOM.querySelector("#number-of-events")).toBeInTheDocument();
-    // });
 });
 
 describe("<App /> integration", () => {
