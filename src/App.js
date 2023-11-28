@@ -3,6 +3,7 @@ import EventList from "./components/EventList";
 import NumberOfEvents from "./components/NumberOfEvents";
 import { useEffect, useState } from "react";
 import { extractLocations, getEvents } from "./api";
+import { InfoAlert, ErrorAlert, WarningAlert } from "./components/Alert";
 import "./App.css";
 
 const App = () => {
@@ -11,33 +12,42 @@ const App = () => {
   const [allLocations, setAllLocations] = useState([]);
   const [currentNOE, setCurrentNOE] = useState(39);
   const [currentCity, setCurrentCity] = useState("See all cities");
+  const [infoAlert, setInfoAlert] = useState("");
+  const [errorAlert, setErrorAlert] = useState("");
+  const [warningAlert, setWarningAlert] = useState("");
 
-  const getAllEvents = async () => {
-    const events = await getEvents()
-    const AllLocations = extractLocations(events)
-    SetLocations(AllLocations);
-    setEvents(events);
-  }
+  useEffect(() => {
+    if (navigator.onLine) {
+      setWarningAlert("");
+    } else {
+      setWarningAlert("You are using this app offline. Event details may no longer be up to date.");
+    }
+    fetchData();
+  }, [currentCity, currentNOE]);
 
   const fetchData = async () => {
     const allEvents = await getEvents();
-    const filteredEvents = currentCity === "See all cities" ?
-      allEvents :
+    const filteredEvents = currentCity === "See all cities" ? allEvents :
       allEvents.filter(event => event.location === currentCity)
     setEvents(filteredEvents.slice(0, currentNOE));
     setAllLocations(extractLocations(allEvents));
   }
 
-  useEffect(() => {
-    getAllEvents()
-    fetchData();
-  }, [currentCity, currentNOE])
-
   return (
     <div className="App">
-      <CitySearch allLocations={locations} setCurrentCity={setCurrentCity} />
-      <NumberOfEvents eventsNumber={events.length} setCurrentNOE={setCurrentNOE} />
-      <EventList events={events} />
+      <div className="alerts-container">
+        {infoAlert.length ? <InfoAlert text={infoAlert} /> : null}
+        {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}
+        {warningAlert.length ? <WarningAlert text={warningAlert} /> : null}
+        <div>
+          <CitySearch
+            allLocations={locations}
+            setCurrentCity={setCurrentCity}
+            setInfoAlert={setInfoAlert} />
+        </div>
+        <NumberOfEvents eventsNumber={events.length} setCurrentNOE={setCurrentNOE} setErrorAlert={setErrorAlert} />
+        <EventList events={events} />
+      </div>
     </div>
   );
 }
