@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import {
     ScatterChart,
     Scatter,
@@ -6,7 +6,7 @@ import {
     CartesianGrid,
     Tooltip,
     ResponsiveContainer
-} from 'recharts';
+} from "recharts";
 
 const CityEventsChart = ({ allLocations, events }) => {
     const [data, setData] = useState([]);

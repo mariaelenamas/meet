@@ -21,7 +21,7 @@ describe("show/hide an event details", () => {
 
     test("An event element is collapsed by default", async () => {
         const eventDetails = await page.$(".event .details");
-        expect(eventDetails).toBeNull();;
+        expect(eventDetails).toBeNull();
     });
 
     test("User can expand an event to see its details", async () => {
